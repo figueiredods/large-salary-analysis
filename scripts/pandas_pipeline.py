@@ -11,7 +11,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_PATH = BASE_DIR / 'data'
 
 # ============================================
-# LOAD & AUDIT DATA
+# CONSTANTS & LOOKUP MAPPINGS
+# ============================================
+MAPPING = {
+    "high school": "High School",
+    "bachelor's": "Bachelor's",
+    "bachelor's degree": "Bachelor's",
+    "master's": "Master's",
+    "master's degree": "Master's",
+    "phd": "PhD",
+    "": "NR" # Maps empty strings to 'NR' (Not Reported)
+}
+
+# ============================================
+# LOAD & AUDIT DATA FUNCTION
 # ============================================
 def load_and_audit_data(csv_path: Path) -> pd.DataFrame:
     """
@@ -24,6 +37,9 @@ def load_and_audit_data(csv_path: Path) -> pd.DataFrame:
     print(df.describe())
     return df
 
+# ============================================
+# CLEAN FUNCTION
+# ============================================
 def clean_salary_data(df: pd.DataFrame, text_cols: list[str], threshold: float = 10000.0) -> pd.DataFrame:
     """
     Sanitizes raw DataFrame using vectorized pandas operations.
@@ -35,12 +51,18 @@ def clean_salary_data(df: pd.DataFrame, text_cols: list[str], threshold: float =
     for col in text_cols:
         df_clean[col] = df_clean[col].str.strip().str.title()
 
+    # Mapping Education Level
+    df_clean['Education Level'] = df_clean["Education Level"].str.lower().str.strip().replace(MAPPING)
+
     print("\n=== Clean DataSet Info ===")
     print(df_clean.info())
     print("\n=== Statistical Summary ===")
     print(df_clean.describe())
     return df_clean
 
+# ============================================
+# EXPORT & MAIN FUNCTION
+# ============================================
 def export_data(df: pd.DataFrame, output_path: Path) -> None:
     """
     Exports sanitized DataFrame to CSV without index column.
@@ -58,7 +80,7 @@ def main():
     export_data(clean_df, clean_csv)
 
 # ============================================
-# MAIN EXECUTION PIPELINE
+# MAIN EXECUTION
 # ============================================
 if __name__ == '__main__':
     main()

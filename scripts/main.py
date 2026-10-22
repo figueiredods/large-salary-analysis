@@ -22,7 +22,7 @@ EDUCATION_MAP = {
     "": "NR" # Maps empty strings to 'NR' (Not Reported)
 }
 # Custom display orders for report formatting
-EDUCATION_ORDEM = ["High School", "Bachelor's", "Master's", "PhD", "NR"]
+EDUCATION_ORDER = ["High School", "Bachelor's", "Master's", "PhD", "NR"]
 GENDER_ORDER = ['Female', 'Male', 'Other']
 
 # ============================================
@@ -160,7 +160,7 @@ def generate_executive_summary(cleaned_data: list[dict], dirt_data: list[dict]):
     # 2. Education Benchmarks
     print("\n[ COMPENSATION BY EDUCATION LEVEL ]")
     edu_means = calculate_salary_by_dimension(cleaned_data, 'Education Level')
-    sorted_edu = sorted(edu_means.items(), key = lambda item: EDUCATION_ORDEM.index(item[0]) if item[0] in EDUCATION_ORDEM else 999)
+    sorted_edu = sorted(edu_means.items(), key = lambda item: EDUCATION_ORDER.index(item[0]) if item[0] in EDUCATION_ORDER else 999)
     for edu, val in sorted_edu:
         print(f"    · {edu:<21}     :   ${val:>11,.2f}")
 
