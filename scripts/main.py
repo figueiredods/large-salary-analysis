@@ -1,12 +1,9 @@
 # ============================================
 # IMPORTS & PATH CONFIGURATION
 # ============================================
-import sys
 from pathlib import Path
 from csv import DictReader, DictWriter
 from collections import defaultdict
-
-sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 # Paths
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -192,7 +189,7 @@ def generate_executive_summary(cleaned_data: list[dict], dirt_data: list[dict]):
     print("=" * 68, "\n")
 
 # ============================================
-# MAIN EXECUTIN PIPELINE
+# MAIN EXECUTION PIPELINE
 # ============================================
 SHOW_AUDITS = False # Set to True whenever you want quick column inspections
 
