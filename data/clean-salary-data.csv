@@ -2006,6 +2006,7 @@ Age,Gender,Education Level,Job Title,Years of Experience,Salary
 33.0,Female,Bachelor's,Full Stack Engineer,6.0,115000.0
 45.0,Male,PhD,Senior Project Engineer,16.0,185000.0
 29.0,Female,Bachelor's,Front End Developer,4.0,90000.0
+27.0,Male,NR,Developer,7.0,100000.0
 31.0,Female,Bachelor's,Front End Developer,6.0,110000.0
 37.0,Male,Master's,Software Engineer Manager,10.0,150000.0
 27.0,Male,Bachelor's,Back End Developer,3.0,80000.0

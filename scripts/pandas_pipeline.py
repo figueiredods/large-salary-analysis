@@ -4,8 +4,6 @@
 from pathlib import Path
 import pandas as pd
 
-## sys.path.append(str(Path(__file__).resolve().parent.parent))
-
 # Paths
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_PATH = BASE_DIR / 'data'
@@ -20,7 +18,7 @@ MAPPING = {
     "master's": "Master's",
     "master's degree": "Master's",
     "phd": "PhD",
-    "": "NR" # Maps empty strings to 'NR' (Not Reported)
+    "missing": "NR" # Maps empty strings to 'NR' (Not Reported)
 }
 
 # ============================================
@@ -44,6 +42,10 @@ def clean_salary_data(df: pd.DataFrame, text_cols: list[str], threshold: float =
     """
     Sanitizes raw DataFrame using vectorized pandas operations.
     """
+    # test
+    df['Education Level'] = df['Education Level'].fillna('missing')
+    print(f"\nTESTE: \n{df['Education Level'].value_counts()}")
+
     # Filter anomalies & drop missing values
     df_clean = df[df['Salary'] >= threshold].dropna().copy()
 

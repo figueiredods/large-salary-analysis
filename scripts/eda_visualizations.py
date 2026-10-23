@@ -15,7 +15,7 @@ OUTPUT_DIR.mkdir(parents = True, exist_ok = True)
 # ============================================
 # CONSTANTS & CATEGORY ORDER
 # ============================================
-EDUCATION_ORDER = ["High School", "Bachelor's", "Master's", "PhD"]
+EDUCATION_ORDER = ["High School", "Bachelor's", "Master's", "PhD", "NR"]
 GENDER_ORDER = ['Female', 'Male', 'Other']
 
 # ============================================
