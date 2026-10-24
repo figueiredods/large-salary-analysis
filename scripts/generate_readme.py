@@ -38,7 +38,7 @@ def generate_readme():
     exp_df = pd.DataFrame([ {"Metric": "Correlation (r)", "Value": f"{exp_stats['corr']:.4f}"}, {"Metric": "Explanatory Power (R²)", "Value": f"{exp_stats['r_squared']:.4f}"}, {"Metric": "Annual Gain (Slope)", "Value": f"+${exp_stats['slope']:,.2f} / year"}, {"Metric": "Base Salary (Intercept)", "Value": f"${exp_stats['intercept']:,.2f}"}, ])
 
     ## README content
-    readme_content = (f"""# Compensatio & Carrer Progression Analysis
+    readme_content = (f"""# Compensation & Carrer Progression Analysis
 
 ## 📊 Executive Summary
 This project analyzes salary distributions across professional experience tiers and education levels using a cleaned dataset of employment records.
@@ -67,7 +67,7 @@ large-salary-analysis/
 ```
 
 ## 📈 Key Statistical Findings
-### Overall Salary Matrics
+### Overall Salary Metrics
 {overall_df.to_markdown(index = False)}
 
 ### Education Level Breakdown
@@ -88,9 +88,9 @@ large-salary-analysis/
 ![Experience VS Salary](visualizations/experience_vs_salary.png)
 
 ## 🚀 How to Run
-1. Clone the repository and install requiriments:
+1. Clone the repository and install requirements:
     ```bash
-    pip install -r requiriments.txt
+    pip install -r requirements.txt
     ````
 2. Generate data stats and README:
     ```bash

@@ -1,4 +1,4 @@
-# Compensatio & Carrer Progression Analysis
+# Compensation & Carrer Progression Analysis
 
 ## 📊 Executive Summary
 This project analyzes salary distributions across professional experience tiers and education levels using a cleaned dataset of employment records.
@@ -27,7 +27,7 @@ large-salary-analysis/
 ```
 
 ## 📈 Key Statistical Findings
-### Overall Salary Matrics
+### Overall Salary Metrics
 | Metric             | Value       |
 |:-------------------|:------------|
 | Mean Salary        | $115,395.57 |
@@ -66,9 +66,9 @@ large-salary-analysis/
 ![Experience VS Salary](visualizations/experience_vs_salary.png)
 
 ## 🚀 How to Run
-1. Clone the repository and install requiriments:
+1. Clone the repository and install requirements:
     ```bash
-    pip install -r requiriments.txt
+    pip install -r requirements.txt
     ````
 2. Generate data stats and README:
     ```bash
