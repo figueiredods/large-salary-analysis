@@ -1,5 +1,5 @@
 # ============================================
-# IMPORTS, PATHS $ CONSTANTS
+# IMPORTS, PATHS & CONSTANTS
 # ============================================
 import pandas as pd
 from pathlib import Path
