@@ -43,6 +43,11 @@ def generate_readme():
 ## 📊 Executive Summary
 This project analyzes salary distributions across professional experience tiers and education levels using a cleaned dataset of employment records.
 
+## ✨ Key Features
+- **Automated Data Pipeline:** Modular architecture (`extract_stats.py` &amp; `generate_readme.py`) that extracts stats and automatically generates `README.md`.
+- **Statistical Modeling:** Measures overall compensation metrics, linear regression between experience and salary ($R^2 = 0.6546$), and education breakdown.
+- **Tech Stack:** Python 3.14, Pandas, Matplotlib, Seaborn, Pathlib, and Tabulate.
+
 ## 📁 Project Architecture 
 ```text 
 large-salary-analysis/ 
